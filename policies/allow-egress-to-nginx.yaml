@@ -4,9 +4,7 @@ metadata:
   name: allow-egress-from-busybox
   namespace: airwave-dev
 spec:
-  podSelector:
-    matchLabels: 
-      app: busybox
+  podSelector: {}
   policyTypes:
   - Egress
   egress:

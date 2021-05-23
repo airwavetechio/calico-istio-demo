@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-from-busybox
+  namespace: default
+spec:
+  podSelector:
+    matchLabels: 
+      app: nginx
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          ns: airwave-dev
+      podSelector:
+        matchLabels:
+          app: busybox

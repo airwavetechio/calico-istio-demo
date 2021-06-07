@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-for-calico-demo
+  name: nginx
   namespace: default
 spec:
   selector:
@@ -18,3 +18,4 @@ spec:
         image: nginx:1.20.0
         ports:
         - containerPort: 80
+        
